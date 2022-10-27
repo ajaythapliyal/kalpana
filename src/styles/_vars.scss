@@ -1,0 +1,16 @@
+:root{
+    --color-light-blue : #BBE1FA;
+    --color-blue : #3282B8;
+    --color-navy : #0F4C75;
+    --color-black: #1B262C;
+    --color-yellow: #FDB813;
+    --color-red : red;
+
+    --color-primary-100 : var(--color-blue);
+    --color-primary-200 : var(--color-navy);
+    --color-secondary-100 : var(--color-light-blue);
+    --color-dark-100 : var(--color-black);
+
+    --color-subject-100 : var(--color-yellow);
+    --color-subject-200 : var(--color-red);
+}
