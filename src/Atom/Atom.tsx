@@ -1,4 +1,4 @@
-import { useFrame } from "@react-three/fiber"
+import { useFrame, useThree } from "@react-three/fiber"
 import { useRef } from "react"
 import { getCustomProperty } from "../util"
 import { AtomName } from "../models"
@@ -8,6 +8,8 @@ import { getElectronicConfiguration } from "./atomHelper"
 
 export default function Atom({name} : {name : AtomName}){
     const groupRef = useRef<Group>(null)
+    const {camera} = useThree();
+    camera.position.y = 2
     useFrame(()=> {
         if(groupRef.current){
             groupRef.current.rotation.y += 0.02
@@ -32,7 +34,7 @@ export default function Atom({name} : {name : AtomName}){
             electronicConfig.map((shellElectrons, shellIndex) => {
                 return new Array(shellElectrons).fill(0).map((electron, index) => {
                     const {x,y,z} = calculatePos(shellIndex, index, shellElectrons)
-                    return <mesh position={[x, y, z]} scale={0.1}>
+                    return <mesh key={`${shellIndex}${index}`} position={[x, y, z]} scale={0.1}>
                     <sphereGeometry />
                     <meshBasicMaterial color={getCustomProperty(colorSubject200)}/>
                 </mesh>
