@@ -1,0 +1,26 @@
+.menu{
+    position: absolute;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--color-light-blue);
+    bottom:0;
+    right: 0;
+    border-radius: 10px;
+
+  }
+
+  .atom-input{
+    border-radius: 10px;
+    border: 1px;
+    padding-block: 5px;
+    padding-left: 10px;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .atom-option,.atom-input{
+    text-transform: capitalize;
+  }
