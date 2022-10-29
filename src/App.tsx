@@ -8,8 +8,7 @@ function App() {
   return (<div className={styles.app}>
     <Canvas>
      <ambientLight intensity={0.1} />
-    {/* <directionalLight position={[0, 0, 5]} /> */}
-    <Atom name='hydrogen'></Atom>
+    <Atom name='oxygen'></Atom>
     <OrbitControls makeDefault></OrbitControls>
     </Canvas></div>)
 }
