@@ -3,7 +3,7 @@
     height: 50px;
     margin: 10px;
     padding: 10px;
-    background-color: var(--color-light-blue);
+    background-color: var(--color-navy);
     bottom:0;
     right: 0;
     border-radius: 10px;
@@ -23,4 +23,8 @@
 
   .atom-option,.atom-input{
     text-transform: capitalize;
+  }
+
+  .label{
+    color: var(--color-light-100)
   }
