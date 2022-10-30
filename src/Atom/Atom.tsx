@@ -32,13 +32,19 @@ export default function Atom({name} : {name : AtomName}){
         </mesh>
         {
             electronicConfig.map((shellElectrons, shellIndex) => {
-                return new Array(shellElectrons).fill(0).map((electron, index) => {
+                return <>
+                <mesh rotation-x={Math.PI / 2}>
+                    <torusGeometry args={[shellIndex + 1, 0.01, 30, 200]}></torusGeometry>
+                    <meshBasicMaterial color={'grey'}/>
+                </mesh>
+                {new Array(shellElectrons).fill(0).map((electron, index) => {
                     const {x,y,z} = calculatePos(shellIndex, index, shellElectrons)
                     return <mesh key={`${shellIndex}${index}`} position={[x, y, z]} scale={0.1}>
                     <sphereGeometry />
                     <meshBasicMaterial color={getCustomProperty(colorSubject200)}/>
                 </mesh>
-                })
+                })}
+                </>
             })
         }
     </group>
