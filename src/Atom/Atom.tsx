@@ -1,5 +1,5 @@
 import { useFrame, useThree } from "@react-three/fiber"
-import { useRef } from "react"
+import { useLayoutEffect, useRef } from "react"
 import { getCustomProperty } from "../util"
 import { AtomName } from "../models"
 import { Group } from "three"
@@ -9,7 +9,11 @@ import { getElectronicConfiguration } from "./atomHelper"
 export default function Atom({name} : {name : AtomName}){
     const groupRef = useRef<Group>(null)
     const {camera} = useThree();
-    camera.position.y = 2
+
+    useLayoutEffect(()=>{
+        camera.position.y = 2
+    })
+
     useFrame(()=> {
         if(groupRef.current){
             groupRef.current.rotation.y += 0.02
