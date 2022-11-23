@@ -1,23 +1,23 @@
 .app{
-  height: calc(100vh - var(--header-height));
+  display: grid;
+  grid-template-columns: calc(100vw - 15em) 15em;
 }
 
-.header{
-  background-color: var(--color-navy);
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
+.canvas{
+  height: 100vh;
 }
-
 
 .header-title{
-  color: var(--color-light-100);
-  font-size: 1rem;
-  padding-left: 10px;
-  font-size: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-primary-200);
+  font-size: var(--header-font-100);
+  padding-left: var(--padding-100);
+  font-weight: var(--header-font-weight-100);
   letter-spacing: 0.3ch;
 }
 
 .header-title::first-letter{
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
