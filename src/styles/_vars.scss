@@ -12,9 +12,10 @@
     --text-size-200 : 1.2 rem;
     --text-weight-100 : 700;
 
-    --padding-100 : 10px;
 
     --border-radius-100 : 10px;
+    --space-100 : 10px;
+    --space-200 : 50px;
 
     --color-primary-100 : var(--color-blue);
     --color-primary-200 : var(--color-navy);
@@ -25,7 +26,7 @@
     --color-subject-200 : var(--color-red);
     --color-subject-300 : var(--color-grey);
 
-    --header-font-100 : var(--text-size-200);
+    --header-font-size-100 : var(--text-size-200);
     --header-font-weight-100 : var(--text-weight-100);
-    --regular-font-100 : var(--text-size-100);
+    --regular-font-size-100 : var(--text-size-100);
 }
