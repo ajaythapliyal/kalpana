@@ -12,8 +12,9 @@ function App() {
 
   return (
   <>
-  <div className={styles.header}><p className={styles['header-title']}>KALP</p></div>
-    <div className={styles.app}>
+  <span className={styles['header-title']}>KALP</span>
+  <div className={styles.app}>
+    <div className={styles.canvas}>
       <Canvas>
         <ambientLight intensity={0.1} />
         <Atom name={atom}></Atom>
@@ -21,6 +22,7 @@ function App() {
         </Canvas>
     </div>
     <Menu atom={atom} onAtomChange={(atom : AtomName)=> setAtom(atom)}></Menu>
+    </div>
   </>)
 }
 

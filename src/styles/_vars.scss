@@ -6,15 +6,27 @@
     --color-yellow: #FDB813;
     --color-red : red;
     --color-white : white;
+    --color-grey : grey;
+
+    --text-size-100 : 1 rem;
+    --text-size-200 : 1.2 rem;
+    --text-weight-100 : 700;
+
+
+    --border-radius-100 : 10px;
+    --space-100 : 10px;
+    --space-200 : 50px;
 
     --color-primary-100 : var(--color-blue);
     --color-primary-200 : var(--color-navy);
     --color-secondary-100 : var(--color-light-blue);
     --color-dark-100 : var(--color-black);
     --color-light-100: var(--color-white);
-
     --color-subject-100 : var(--color-yellow);
     --color-subject-200 : var(--color-red);
+    --color-subject-300 : var(--color-grey);
 
-    --header-height: 3em
+    --header-font-size-100 : var(--text-size-200);
+    --header-font-weight-100 : var(--text-weight-100);
+    --regular-font-size-100 : var(--text-size-100);
 }

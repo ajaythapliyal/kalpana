@@ -1,6 +1,6 @@
 import { useFrame, useThree } from "@react-three/fiber"
-import { useRef } from "react"
-import { getCustomProperty } from "../util"
+import { useLayoutEffect, useRef } from "react"
+import { colorSubject300, getCustomProperty } from "../util"
 import { AtomName } from "../models"
 import { Group } from "three"
 import { colorSubject100, colorSubject200 } from "./../util"
@@ -9,7 +9,11 @@ import { getElectronicConfiguration } from "./atomHelper"
 export default function Atom({name} : {name : AtomName}){
     const groupRef = useRef<Group>(null)
     const {camera} = useThree();
-    camera.position.y = 2
+
+    useLayoutEffect(()=>{
+        camera.position.y = 2
+    })
+
     useFrame(()=> {
         if(groupRef.current){
             groupRef.current.rotation.y += 0.02
@@ -35,7 +39,7 @@ export default function Atom({name} : {name : AtomName}){
                 return <>
                 <mesh rotation-x={Math.PI / 2}>
                     <torusGeometry args={[shellIndex + 1, 0.01, 30, 200]}></torusGeometry>
-                    <meshBasicMaterial color={'grey'}/>
+                    <meshBasicMaterial color={getCustomProperty(colorSubject300)}/>
                 </mesh>
                 {new Array(shellElectrons).fill(0).map((electron, index) => {
                     const {x,y,z} = calculatePos(shellIndex, index, shellElectrons)
