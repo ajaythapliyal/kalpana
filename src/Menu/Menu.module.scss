@@ -4,26 +4,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: var(--space-100);
   }
 
   .menu-title{
     font-size: 1.2rem;
     font-weight: var(--header-font-weight-100);
     margin-bottom: var(--space-200);
-  }
-
-  .atom-input{
-    border-radius: var(--border-radius-100);
-    padding-block: var(--space-100);
-    padding-left: var(--space-100);
-
-    &:focus{
-      outline: none;
-    }
-  }
-
-  .atom-option,.atom-input{
-    text-transform: capitalize;
   }
 
   .label{
