@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Autocomplete } from '../Autocomplete/Autocomplete'
 import { AtomName, atoms } from '../models'
 import styles from './Menu.module.scss'
@@ -12,6 +12,6 @@ export function Menu({atom, onAtomChange} : {atom: AtomName, onAtomChange: (atom
 
     return <div className={styles.menu}>
         <p className={`${styles['menu-title']} ${styles.label}`}>Atomic Structure</p>
-        <Autocomplete defaultItem={atomStored} items={atoms} onItemSelect={(atomName)=> onAtomSelect(atomName as AtomName)}></Autocomplete>
+        <Autocomplete defaultItem={atomStored} items={atoms} onItemSelect={(atomName)=> onAtomSelect(atomName as AtomName)} placeholder="eg Oxygen, Carbon"></Autocomplete>
     </div>
 }
