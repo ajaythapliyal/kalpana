@@ -1,0 +1,24 @@
+.input{
+    border-radius: var(--border-radius-100);
+    padding-block: var(--space-100);
+    padding-left: var(--space-100);
+    text-transform: capitalize;
+
+    &:focus{
+        outline: none;
+      }
+}
+
+.suggestion{
+  background-color: var(--color-light-100);
+  padding: var(--space-50);
+  display: grid;
+  place-content: center;
+  text-transform: capitalize;
+
+  &:hover{
+    background-color: var(--color-primary-200);
+    color: var(--color-light-100);
+    cursor: pointer;
+  }
+}
