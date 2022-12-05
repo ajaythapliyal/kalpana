@@ -15,10 +15,10 @@
   display: grid;
   place-content: center;
   text-transform: capitalize;
+}
 
-  &:hover{
-    background-color: var(--color-primary-200);
-    color: var(--color-light-100);
-    cursor: pointer;
-  }
+.active-suggestion{
+  background-color: var(--color-primary-200);
+  color: var(--color-light-100);
+  cursor: pointer;
 }
