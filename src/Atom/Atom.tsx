@@ -12,7 +12,7 @@ export default function Atom({name, isAtomRotate} : {name : AtomName, isAtomRota
 
     useLayoutEffect(()=>{
         camera.position.y = 2
-    })
+    }, [])
 
     useFrame(()=> {
         if(groupRef.current && isAtomRotate){
@@ -57,4 +57,8 @@ export default function Atom({name, isAtomRotate} : {name : AtomName, isAtomRota
 }
 
 
-// TODO : size for neutrons and electros are hardcoded. speed of revolution is hardcoded. Radius is hardcoded.
+/**
+ * TODO : 
+ * 1] size for neutrons and electros are hardcoded. speed of revolution is hardcoded. Radius is hardcoded.
+ * 2]fix the dependency array above use layput effects
+ *  */ 
