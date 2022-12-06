@@ -6,7 +6,7 @@ import { Group } from "three"
 import { colorSubject100, colorSubject200 } from "./../util"
 import { getElectronicConfiguration } from "./atomHelper"
 
-export default function Atom({name} : {name : AtomName}){
+export default function Atom({name, isAtomRotate} : {name : AtomName, isAtomRotate: boolean}){
     const groupRef = useRef<Group>(null)
     const {camera} = useThree();
 
@@ -15,7 +15,7 @@ export default function Atom({name} : {name : AtomName}){
     })
 
     useFrame(()=> {
-        if(groupRef.current){
+        if(groupRef.current && isAtomRotate){
             groupRef.current.rotation.y += 0.02
         }
     })
