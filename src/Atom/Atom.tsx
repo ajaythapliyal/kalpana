@@ -6,16 +6,16 @@ import { Group } from "three"
 import { colorSubject100, colorSubject200 } from "./../util"
 import { getElectronicConfiguration } from "./atomHelper"
 
-export default function Atom({name} : {name : AtomName}){
+export default function Atom({name, isAtomRotate} : {name : AtomName, isAtomRotate: boolean}){
     const groupRef = useRef<Group>(null)
     const {camera} = useThree();
 
     useLayoutEffect(()=>{
         camera.position.y = 2
-    })
+    }, [])
 
     useFrame(()=> {
-        if(groupRef.current){
+        if(groupRef.current && isAtomRotate){
             groupRef.current.rotation.y += 0.02
         }
     })
@@ -57,4 +57,8 @@ export default function Atom({name} : {name : AtomName}){
 }
 
 
-// TODO : size for neutrons and electros are hardcoded. speed of revolution is hardcoded. Radius is hardcoded.
+/**
+ * TODO : 
+ * 1] size for neutrons and electros are hardcoded. speed of revolution is hardcoded. Radius is hardcoded.
+ * 2]fix the dependency array above use layput effects
+ *  */ 

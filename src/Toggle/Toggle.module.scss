@@ -1,0 +1,46 @@
+.container{
+  display: flex;
+  align-items: center;
+
+  & >p{
+    color: var(--color-light-100);
+  }
+}
+
+.switch-container{
+  width : 3em;
+  border-radius: 20px;
+  padding-block: var(--space-50);
+  padding-inline: var(--space-50);
+  margin-left: var(--space-100);
+}
+
+.switch{
+  border-radius: 50%;
+  height: 1.2em;
+  width: 1.2em;
+  position: relative;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: linear
+}
+
+.active{
+  background-color: var(--color-light-blue);
+}
+
+.active .switch{
+  left: 2em;
+  background-color: var(--color-primary-200);
+}
+
+.inactive{
+  background-color: var(--color-light-100);
+}
+
+.inactive .switch{
+  left: 0;
+  background-color: var(--color-grey);
+}
+
+// TODO : create classes out of variables and create partials for that.

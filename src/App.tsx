@@ -8,7 +8,8 @@ import { AtomName } from './models';
 
 function App() {
 
-  const [atom, setAtom] = useState<AtomName>('hydrogen')
+  const [atom, setAtom] = useState<AtomName>('hydrogen');
+  const [isAtomRotate, setAtomIsRotate] = useState(true);
 
   return (
   <>
@@ -17,11 +18,11 @@ function App() {
     <div className={styles.canvas}>
       <Canvas>
         <ambientLight intensity={0.1} />
-        <Atom name={atom}></Atom>
+        <Atom name={atom} isAtomRotate={isAtomRotate}></Atom>
         <OrbitControls></OrbitControls>
         </Canvas>
     </div>
-    <Menu atom={atom} onAtomChange={(atom : AtomName)=> setAtom(atom)}></Menu>
+    <Menu atom={atom} isAtomRotate={isAtomRotate} onAtomChange={(atom : AtomName)=> setAtom(atom)} onRotateToggle={(toggleState)=> setAtomIsRotate(toggleState)}></Menu>
     </div>
   </>)
 }
